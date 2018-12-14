@@ -1,4 +1,4 @@
-<h1>New review</h1>
+<h1>New Review for <%= @product.name %></h1>
 
 <% if @review.errors.any? %>
   <h3>Oops there were some errors. Please try again:</h3>
@@ -9,7 +9,8 @@
   </ul>
 <% end %>
 
-<%= form_for @review do |f| %>
+
+<%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
   <%= f.text_field :author %>
   <%= f.label :content_body %>
