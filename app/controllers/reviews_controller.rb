@@ -29,17 +29,17 @@ class ReviewsController < ApplicationController
     end
 
    def update
-     @product = Product.find(params[:id])
-     if @product.update(product_params)
+     @review = Review.find(params[:id])
+     if @review.update(review_params)
        redirect_to products_path
      else
-       render :edit
+       render :show
      end
    end
 
    def destroy
-      @product = Product.find(params[:id])
-      @product.destroy
+      @review = Review.find(params[:id])
+      @review.destroy
       redirect_to products_path
     end
 
