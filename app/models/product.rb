@@ -16,6 +16,7 @@ class Product < ActiveRecord::Base
     .limit(3)
     )}
 
+  scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%")}
   # scope :total_rating,includes(:reviews).group('product_id').where('SUM(reviews.rating)');
 
   def self.recent_add
