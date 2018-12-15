@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    @recent_products = Product.recent
+    @recent_products = Product.recent_add
+    @top_products = Product.top_reviews
   end
 
   def show
@@ -39,10 +40,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
-  end
-
-  def recent_products
-    @recent_products = Product.by_product.limit(3)
   end
 
   private

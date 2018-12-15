@@ -11,11 +11,18 @@ next to Max's Opera Café and Schaub's Meat Fish & Poultry.
 See you in the store!</p>
 
 
-<h3>Products</h3>
-
+<h3>New Products</h3>
 
 <ul>
   <% @recent_products.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
+
+<h3>Top Products</h3>
+
+<ul>
+  <% @top_products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %></li>
   <% end %>
 </ul>
