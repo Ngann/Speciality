@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @recent_products = Product.recent_add
-    @top_products = Product.top_reviews
   end
 
   def show
