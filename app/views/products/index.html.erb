@@ -1,17 +1,21 @@
 <h1>Mario's Speciality Foods</h1>
-<h3>Products</h3>
+<%= image_tag "rails.jpeg" %>
 
+<p>Mario's Speciality Foods is a small, family-owned produce and specialty grocery store with locations in Redwood City and Palo Alto, Calif. We welcome you to come to Mario's where you'll take a step back in time to an old-fashioned, open-air market to taste, feel and experience the way a fresh market used to be.
 
-<p>Marioa's Speciality Foods is a small, family-owned produce and specialty grocery store with locations in Redwood City and Palo Alto, Calif. We welcome you to come to Marioa's where you'll take a step back in time to an old-fashioned, open-air market to taste, feel and experience the way a fresh market used to be.
-
-What started out 35 years ago as an everyday farmers' market has grown to meet the needs of our communities, yet still has that same old-fashioned, corner-grocer feel. At Marioa's today you'll find locally grown, organic and best-quality seasonal produce, local and globally sourced specialty foods, gourmet ingredients, more than 250 varieties of artisan cheeses, fresh-cut flowers, microbrews & wine, fresh press & seasonal olive oils and balsamics, specialty dried fruits & nuts and more.
+What started out 35 years ago as an everyday farmers' market has grown to meet the needs of our communities, yet still has that same old-fashioned, corner-grocer feel. At Mario's today you'll find locally grown, organic and best-quality seasonal produce, local and globally sourced specialty foods, gourmet ingredients, more than 250 varieties of artisan cheeses, fresh-cut flowers, microbrews & wine, fresh press & seasonal olive oils and balsamics, specialty dried fruits & nuts and more.
 
 Visit our flagship store in Redwood City, across from Costco, or come by our store at the Stanford Shopping Center,
 next to Max's Opera Café and Schaub's Meat Fish & Poultry.
 
 See you in the store!</p>
+
+
+<h3>Products</h3>
+
+
 <ul>
-  <% @products.each do |product| %>
+  <% @recent_products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %></li>
   <% end %>
 </ul>
