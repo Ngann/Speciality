@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    @Reviews = Review.all
     @recent_products = Product.recent_add
+    @average_reviews = Review.total_ratings
+    @test = Review.product_review
+    @product_review = Product.find([@test])
   end
 
   def show

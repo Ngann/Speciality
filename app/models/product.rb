@@ -27,12 +27,20 @@ class Product < ActiveRecord::Base
     self.select("*").from("products, reviews").where("products.id = reviews.product_id").limit(3)
   end
 
-  def self.total_rating
-    self.select("product_id, sum(rating) as total").group("product_id").order("total DESC").limit(3)
-  end
+  # def self.review_sort
+  #  avg_test = Review.product_review
+  #  avg_test.each do |review|
+  #    id = review.product_id
+  #    array.push(id)
+  #  end
+  # end
+
+  # def self.total_ratings
+  #   self.select("product_id, avg(rating) as total").group("product_id").order("total DESC").limit(3)
+  # end
 
 
-  # SELECT product_id, SUM (rating) AS total FROM reviews GROUP BY product_id ORDER BY total DESC;
+# SELECT product_id, AVG (rating) AS total FROM reviews GROUP BY product_id ORDER BY total DESC LIMIT 10;
 
   # SELECT * FROM products, reviews WHERE products.id = reviews.product_id;
 
