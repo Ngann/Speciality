@@ -10,7 +10,14 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+Migrate: rake db:migrate
 
+Prepare Test Database: rake db:test:prepare
+
+Start Rails server: rails s
+
+Rails URL: localhost:3000
+Generate Sample data: rails db:seed
 * Database creation
 
 * Database initialization

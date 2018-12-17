@@ -19,3 +19,16 @@
   <%= f.text_field :country %>
   <%= f.submit  %>
 <% end %>
+
+
+<% if @products.any? %>
+  <h3>All Products</h3>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to "Home", products_path%>

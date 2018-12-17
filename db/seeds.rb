@@ -27,6 +27,11 @@
 
 # Below is the code using Faker to generate the data
 Product.destroy_all
+Review.destroy_all
+
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
 
 10.times do |index|
   Product.create!( name: Faker::Food.fruits,
@@ -46,4 +51,12 @@ end
                         country: Faker::Address.country)
 end
 
+10.times do |index|
+  Review.create!( author: Faker::Name.name,
+                        content_body: Faker::Lorem.sentences(1),
+                        rating: Faker::Number.between(1,5),
+                        product_id:Faker::Number.between(1,30))
+end
+
 p "Created #{Product.count} products"
+p "Created #{Review.count} reviews"
