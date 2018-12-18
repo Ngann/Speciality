@@ -20,7 +20,20 @@
   <%= f.submit  %>
 <% end %>
 
-
+<div class="container">
+  <h2>All Products</h2>
+  <% @products.each_slice(3)  do |product| %>
+    <div class="row">
+    <% @products.each  do |product| %>
+      <div class="col-sm-6 col-lg-4">
+        <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
+        <h2><%= link_to product.name, product_path(product) %></h2>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+<!--
 <% if @products.any? %>
   <h3>All Products</h3>
   <ul>
@@ -28,7 +41,7 @@
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
-<% end %>
+<% end %> -->
 
 
 <%= link_to "Home", products_path%>

@@ -12,21 +12,25 @@ See you in the store!</p>
 
 
 <h3>New Products</h3>
-
-<ul>
-  <% @recent_products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @recent_products.each do |product| %>
+    <div class="col-sm-6 col-lg-4">
+      <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
+      <h2><%= link_to product.name, product_path(product) %></h2>
+    </div>
+    <% end %>
+  </div>
 
 <h3>Highest Review Products</h3>
 
-<ul>
+<div class="row">
   <% @product_review.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+  <div class="col-sm-6 col-lg-4">
+    <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
+    <h2><%= link_to product.name, product_path(product) %></h2>
+  </div>
   <% end %>
-</ul>
-
+</div>
 
 
 <%= link_to "Add Product", new_product_path %>
