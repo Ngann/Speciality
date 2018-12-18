@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     @average_reviews = Review.total_ratings
     @test = Review.product_review
     @product_review = Product.find([@test])
+    @order_item = current_order.order_items.new
   end
 
   def show

@@ -1,4 +1,33 @@
 <h1>Mario's Speciality Foods</h1>
+<!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  Indicators
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  Wrapper for slides
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/assets/blueberries.jpeg" alt="blue">
+    </div>
+    <div class="item">
+      <img src="/assets/blueberries.jpeg" alt="red">
+    </div>
+    ...
+  </div>
+
+  Controls
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> -->
+
+
 <%= image_tag "rails.jpeg" %>
 
 <p>Mario's Speciality Foods is a small, family-owned produce and specialty grocery store with locations in Redwood City and Palo Alto, Calif. We welcome you to come to Mario's where you'll take a step back in time to an old-fashioned, open-air market to taste, feel and experience the way a fresh market used to be.
@@ -16,7 +45,7 @@ See you in the store!</p>
     <% @recent_products.each do |product| %>
     <div class="col-sm-6 col-lg-4">
       <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
-      <h2><%= link_to product.name, product_path(product) %></h2>
+      <h3><%= link_to product.name, product_path(product) %></h3>
     </div>
     <% end %>
   </div>
@@ -27,11 +56,19 @@ See you in the store!</p>
   <% @product_review.each do |product| %>
   <div class="col-sm-6 col-lg-4">
     <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
-    <h2><%= link_to product.name, product_path(product) %></h2>
+    <h3><%= link_to product.name, product_path(product) %></h3>
   </div>
   <% end %>
 </div>
 
+<% @products.each do |product| %>
+  <p><%= product.name %> | <%= number_to_currency product.price %>
+  <%= form_for @order_item do |f| %>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <%= f.number_field :quantity %>
+    <%= f.submit "Add to cart" %>
+  <% end %></p>
+<% end %>
 
-<%= link_to "Add Product", new_product_path %>
-<%= link_to "All Products", products_path %>
+
+<%= link_to "All Products", new_product_path %>
