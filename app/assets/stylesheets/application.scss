@@ -16,3 +16,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+li {
+  display: inline;
+  float: left;
+  padding: 14px 16px;
+}
