@@ -26,7 +26,8 @@
     <div class="row">
     <% @products.each  do |product| %>
       <div class="col-sm-6 col-lg-4">
-        <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive">
+        <!-- <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive"> -->
+            <img src="https://via.placeholder.com/250" class="img-responsive">
         <h2><%= link_to product.name, product_path(product) %></h2>
       </div>
     <% end %>
