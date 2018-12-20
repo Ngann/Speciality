@@ -58,13 +58,19 @@ li a:hover {
 }
 
 .products  {
-  margin-top: 0px;
+  padding-top: 30px;
   background-color: lightblue;
-  padding: 0px;
+  text-align: center;
+}
+
+.products_two {
+  padding-top: 30px;
+  background-color: lightpink;
   text-align: center;
 }
 
 .row {
+  padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
   align-items: center;
