@@ -17,8 +17,55 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 li {
   display: inline;
   float: left;
   padding: 14px 16px;
+  top: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0000;
+  top: 0;
+}
+
+li a {
+  display: block;
+  color: green;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: inherit;
+}
+
+li a:hover {
+  background-color: beige;
+}
+
+.content  {
+  background-color: beige;
+  margin: 0px;
+  padding: 50px;
+}
+
+.products  {
+  margin-top: 0px;
+  background-color: lightblue;
+  padding: 0px;
+  text-align: center;
+}
+
+.row {
+  padding-left: 30px;
+  padding-right: 30px;
+  align-items: center;
 }

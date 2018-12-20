@@ -1,38 +1,46 @@
-<h1>Mario's Speciality Foods</h1>
 <%= image_tag "rails.jpeg" %>
 
-<p>Mario's Speciality Foods is a small, family-owned produce and specialty grocery store with locations in Redwood City and Palo Alto, Calif. We welcome you to come to Mario's where you'll take a step back in time to an old-fashioned, open-air market to taste, feel and experience the way a fresh market used to be.
+<div class="content">
 
-What started out 35 years ago as an everyday farmers' market has grown to meet the needs of our communities, yet still has that same old-fashioned, corner-grocer feel. At Mario's today you'll find locally grown, organic and best-quality seasonal produce, local and globally sourced specialty foods, gourmet ingredients, more than 250 varieties of artisan cheeses, fresh-cut flowers, microbrews & wine, fresh press & seasonal olive oils and balsamics, specialty dried fruits & nuts and more.
+  <p>Mario's Speciality Foods is a small, family-owned produce and specialty grocery store with locations in Redwood City and Palo Alto, Calif. We welcome you to come to Mario's where you'll take a step back in time to an old-fashioned, open-air market to taste, feel and experience the way a fresh market used to be.
 
-Visit our flagship store in Redwood City, across from Costco, or come by our store at the Stanford Shopping Center,
-next to Max's Opera Café and Schaub's Meat Fish & Poultry.
+    What started out 35 years ago as an everyday farmers' market has grown to meet the needs of our communities, yet still has that same old-fashioned, corner-grocer feel. At Mario's today you'll find locally grown, organic and best-quality seasonal produce, local and globally sourced specialty foods, gourmet ingredients, more than 250 varieties of artisan cheeses, fresh-cut flowers, microbrews & wine, fresh press & seasonal olive oils and balsamics, specialty dried fruits & nuts and more.
 
-See you in the store!</p>
+    Visit our flagship store in Redwood City, across from Costco, or come by our store at the Stanford Shopping Center,
+    next to Max's Opera Café and Schaub's Meat Fish & Poultry.
 
+    See you in the store!</p>
+</div>
 
-<h3>New Products</h3>
+<div class="products">
+  <h3>New Products</h3>
   <div class="row">
     <% @recent_products.each do |product| %>
     <div class="col-sm-6 col-lg-4">
       <!-- <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive"> -->
       <img src="https://via.placeholder.com/250">
-      <h2><%= link_to product.name, product_path(product) %></h2>
+      <h3><%= link_to product.name, product_path(product) %></h3>
     </div>
     <% end %>
   </div>
-
-<h3>Highest Review Products</h3>
-
-<div class="row">
-  <% @product_review.each do |product| %>
-  <div class="col-sm-6 col-lg-4">
-    <!-- <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive"> -->
-    <img src="https://via.placeholder.com/250">
-    <h2><%= link_to product.name, product_path(product) %></h2>
-  </div>
-  <% end %>
 </div>
 
+<div class="products">
+  <h3>Highest Review Products</h3>
 
-<%= link_to "All Product", new_product_path %>
+  <div class="row">
+    <% @product_review.each do |product| %>
+    <div class="col-sm-6 col-lg-4">
+      <!-- <img src="<%= '/assets/rails.jpeg' %>" class="img-responsive"> -->
+      <img src="https://via.placeholder.com/250">
+      <h3><%= link_to product.name, product_path(product) %></h3>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="products">
+  <div class="row">
+    <h3><%= link_to "All Product", new_product_path %></h3>
+  </div>
+</div>
